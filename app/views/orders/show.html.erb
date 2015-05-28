@@ -1,0 +1,7 @@
+<h1>Order Number: <%= @order.id %></h1>
+<%= "Order submitted: #{@order.created_at}" %><br>
+<% @order.products.each do |p| %>
+  <%= "#{p.name} $#{p.price}" %><br>
+<% end %>
+$<%= @order.total %>
+<%= link_to "Edit Order", order_edit_path(@order) %>
