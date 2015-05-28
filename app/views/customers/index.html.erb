@@ -3,15 +3,26 @@
   <h3>Offering the latest products on the interwebs</h3>
 </div>
 <h1>Customer index</h1>
+<div class="row" id="head">
+    <div class="col-md-2">
+      <h3>Name</h3>
+    </div>
+    <div class="col-md-2">
+      <h3>Email</h3>
+    </div>
+</div>
 <% @customers.each do |c| %>
   <div class="row">
     <div class="col-md-2">
-      <h4><%= c.id %>. <%= c.first_name %> <%= c.last_name %></h4>
+      <h4><%= c.first_name %> <%= c.last_name %></h4>
+    </div>
+    <div class="col-md-2">
+      <h4><%= c.email %></h4>
     </div>
     <div class="col-md-2">
       <h4><%= link_to "Customer Detail", customer_path(c) %></h4>
     </div>
   </div>
-
 <% end %>
+<h4><%= link_to "Add new customer", new_customer_path() %></h4>
 

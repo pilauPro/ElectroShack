@@ -1,13 +1,13 @@
 Rails.application.routes.draw do
   get 'customers/' => 'customers#index'
 
+  get 'customers/new' => 'customers#new', as: :new_customer
+  
+  post 'customers' => 'customers#create'
+  
   get 'customers/:id' => 'customers#show', as: :customer
 
-  get 'products/index'
-
   get 'products/:id' => 'products#show', as: :product
-  
-  get 'orders/new' => 'orders#new' , as: :new_order
   
   get 'orders/:id' => 'orders#show', as: :order
   
