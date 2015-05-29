@@ -1,10 +1,13 @@
-<h1>Welcome, <%= @customer.first_name %></h1>
+<div class="jumbotron">
+  <h1>ElectroShack</h1>
+</div>
+<h2>Welcome, <%= @customer.first_name %></h2>
 <h3>Order History</h3>
 <% @customer.orders.each do |o| %>
-  <h4>order id: <%= link_to o.id, order_path(o) %></h4>
+  <h4>Order ID: <%= link_to o.id, order_path(o) %></h4>
   <% o.products.each do |p| %>
-    <%= link_to p.name, product_path(p) %><br>
+    <h4><%= link_to p.name, product_path(p) %></h4>
   <% end %>
-  <br>
   <h4>order total: $<%= o.total %></h4>
+  <h4>----</h4>
 <% end %>
