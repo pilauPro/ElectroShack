@@ -14,9 +14,6 @@
   <div class="col-md-2">
     <h3>Order Date</h3>
   </div>
-  <div class="col-md-2">
-    <h3>Products</h3>
-  </div>
 </div>
 <div class="row">
   <div class="col-md-2">
@@ -29,15 +26,29 @@
     <h4><%= @order.created_at %></h4>
   </div>
 </div>
-<div class="row">
-  <div class="col-md-2 col-md-offset-6">
-    <% @order.products.each do |p| %>
-      <%= "#{p.name} $#{p.price}" %><br>
-    <% end %>
+<div class="row" id="head">
+  <div class="col-md-2">
+    <h3>Product</h3>
+  </div>
+  <div class="col-md-2">
+    <h3>Price</h3>
   </div>
 </div>
+<% @order.products.each do |p| %>
+  <div class="row">
+    <div class="col-md-2">
+      <h4><%= link_to p.name, product_path(p) %></h4>
+    </div>
+    <div class="col-md-2">
+      <h4>$<%= p.price %></h4>
+    </div>
+  </div>
+<% end %>
 <div class="row">
   <div class="col-md-2">
-    $<%= @order.total %>
+    <h4>Total:</h4>
+  </div>
+  <div class="col-md-2">
+    <h4>$<%= @order.total %></h4>
   </div>
 </div>
