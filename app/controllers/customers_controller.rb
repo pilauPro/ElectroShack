@@ -12,6 +12,10 @@ class CustomersController < ApplicationController
     @customer = Customer.new
   end
   
+  def edit
+    @customer = Customer.find(params[:id])
+  end
+  
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
@@ -19,7 +23,15 @@ class CustomersController < ApplicationController
     else
       render 'new'
     end
-    
+  end
+  
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+        redirect_to action: :index
+    else
+      render 'edit'
+    end
   end
   
   private

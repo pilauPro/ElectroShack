@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   post 'customers' => 'customers#create'
   
   get 'customers/:id' => 'customers#show', as: :customer
+  
+  get 'customers/:id/edit' => 'customers#edit', as: :customer_edit
+  
+  patch 'customers/:id' => 'customers#update'
 
   get 'products/:id' => 'products#show', as: :product
   

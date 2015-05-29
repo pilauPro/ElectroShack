@@ -4,4 +4,4 @@
   <%= "#{p.name} $#{p.price}" %><br>
 <% end %>
 $<%= @order.total %>
-<%= link_to "Edit Order", order_edit_path(@order) %>
+<%= link_to "Edit Order", order_path(@order) %>
