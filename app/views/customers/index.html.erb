@@ -5,10 +5,13 @@
 <h1>Customer index</h1>
 <div class="row" id="head">
     <div class="col-md-2">
-      <h3>Name</h3>
+      <h3>Name <span id="smaller-name">(click to edit)</span></h3>
     </div>
     <div class="col-md-2">
       <h3>Email</h3>
+    </div>
+    <div class="col-md-2">
+      <h3>Orders</h3>
     </div>
 </div>
 <% @customers.each do |c| %>
