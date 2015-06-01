@@ -1,4 +1,22 @@
-<h1><%= @product.name %></h1>
-<img src="<%= @product.image %>">
+<div class="jumbotron">
+  <h1>Electroshack</h1>
+</div>
+<h2><%= @product.name %></h2>
+<h3>$<%= @product.price %></h3>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail"><img src="<%= @product.image %>"></div>
+  </div>
+</div>
+<div class="row">
+  <div class= "col-md-2">
+    <% if @product.quantity > 0 %>
+      <h3>In Stock!</h3>
+    <% else %>
+      <h3>Out of stock.</h3>
+    <% end %>
+  </div>
+</div>
 
 
